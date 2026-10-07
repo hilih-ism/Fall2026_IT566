@@ -19,7 +19,7 @@ def main():
     diary_filename = choose_diary_file()
 
   elif choice == "4":
-    break
+    exit()
 
   else:
     print("Invalid choice.")

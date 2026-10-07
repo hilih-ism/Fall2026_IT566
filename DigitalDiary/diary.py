@@ -9,7 +9,6 @@ def create_diary_entry(filename):
  with open(filename, "a") as diary_file:
     diary_file.write(diary_entry)
 
-#  return diary_entry
 def choose_diary_file():
     filename = input("Enter diary filename: ")
 
@@ -18,4 +17,9 @@ def choose_diary_file():
 
     return filename
 
-# def filter_entries_by_date(filename):
+def filter_entries_by_date(filename):
+   search_date = input("Enter date to filter entries (YYYY-MM-DD): ")
+   with open(filename, "r") as diary_file:
+       for line in diary_file:
+           if line.startswith(search_date):
+               print(line, end="")
