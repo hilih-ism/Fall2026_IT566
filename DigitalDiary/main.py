@@ -17,14 +17,11 @@ def main():
     filter_entries_by_date(diary_filename)
   elif choice == "3":
     diary_filename = choose_diary_file()
-
   elif choice == "4":
     exit()
 
   else:
     print("Invalid choice.")
-
- create_diary_entry(diary_filename)
 
 if __name__ == "__main__":
  main()
