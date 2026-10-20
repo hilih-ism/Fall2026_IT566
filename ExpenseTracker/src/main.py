@@ -23,6 +23,8 @@ def main():
   elif choice == "3":
     filter_expenses_by_category(expense_file)
   elif choice == "4":
+    expense_file = choose_expense_file()
+  elif choice == "5":
     exit()
 
   else:
