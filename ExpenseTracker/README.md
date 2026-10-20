@@ -1,4 +1,4 @@
-# Tasks:
+# Requirements:
 - Write a multi-module Python application that lets users enter, filter, and print expenses to the console.
 - Save expense data to file in JSON format
 - The application must be able to open expense files
