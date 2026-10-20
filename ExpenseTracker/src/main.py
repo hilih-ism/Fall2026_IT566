@@ -1,5 +1,6 @@
 from tracking import choose_expense_file
-
+from tracking import create_expense_entry
+from filter_expenses_by_date import filter_expenses_by_date
 
 def main():
  expense_file = choose_expense_file()
@@ -14,9 +15,9 @@ def main():
 
   choice = input("Choose an option: ")
   if choice == "1":
-    create_diary_entry(expense_file)
+    create_expense_entry(expense_file)
   elif choice == "2":
-    filter_entries_by_date(expense_file)
+    filter_expenses_by_date(expense_file)
   elif choice == "3":
     expense_file = choose_expense_file()
   elif choice == "4":
