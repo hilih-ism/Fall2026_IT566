@@ -1,4 +1,6 @@
 import datetime
+import json
+import os
 
 
 def choose_expense_file():
@@ -6,15 +8,27 @@ def choose_expense_file():
 
     if not filename.endswith(".json"):
         filename += ".json"
+    filepath = os.path.join("ExpenseFiles", filename)
+    return filepath
 
-    return filename
 
-def create_expense_entry(filename):
- entry_text = input("enter your expense: ")
- entry_category = input("choose a category: ")
- entry_date = datetime.datetime.now().strftime("%Y-%m-%d")
- 
- expense_entry = f"{entry_date} | {entry_text} | {entry_category}\n"
- 
- with open(filename, "a") as expense_file:
-    expense_file.write(expense_entry)
+def create_expense_entry(filepath):
+ entry_text = input("Enter your expense: ")
+ entry_category = input("Choose a category: ")
+ while True:
+        entry_date = input("Enter date (YYYY-MM-DD): ")
+
+        try:
+            datetime.datetime.strptime(entry_date, "%Y-%m-%d")
+            break
+        except ValueError:
+            print("Invalid date. Use YYYY-MM-DD.")
+
+ expense_entry = {
+        "date": entry_date,
+        "expense": entry_text,
+        "category": entry_category
+    }
+
+ with open(filepath, "w") as expense_file:
+        json.dump(expense_entry, expense_file, indent=4)

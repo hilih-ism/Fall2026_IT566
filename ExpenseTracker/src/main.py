@@ -1,6 +1,7 @@
 from tracking import choose_expense_file
 from tracking import create_expense_entry
 from filter_expenses_by_date import filter_expenses_by_date
+from filter_expenses_by_category import filter_expenses_by_category
 
 def main():
  expense_file = choose_expense_file()
@@ -10,8 +11,9 @@ def main():
   print(f"Current file: {expense_file}")
   print("1. Enter new expenses")
   print("2. filter expenses by date")
-  print("3. Change expense file")
-  print("4. Exit")
+  print("3. filter expenses by category")
+  print("4. Change expense file")
+  print("5. Exit")
 
   choice = input("Choose an option: ")
   if choice == "1":
@@ -19,7 +21,7 @@ def main():
   elif choice == "2":
     filter_expenses_by_date(expense_file)
   elif choice == "3":
-    expense_file = choose_expense_file()
+    filter_expenses_by_category(expense_file)
   elif choice == "4":
     exit()
 
