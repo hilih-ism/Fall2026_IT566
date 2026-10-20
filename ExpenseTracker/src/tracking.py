@@ -13,7 +13,7 @@ def choose_expense_file():
 
 
 def create_expense_entry(filepath):
- entry_text = input("Enter your expense: ")
+ entry_expense = input("Enter your expense: ")
  entry_category = input("Choose a category: ")
  while True:
         entry_date = input("Enter date (YYYY-MM-DD): ")
@@ -26,7 +26,7 @@ def create_expense_entry(filepath):
 
  expense_entry = {
         "date": entry_date,
-        "expense": entry_text,
+        "expense": entry_expense,
         "category": entry_category
     }
 
