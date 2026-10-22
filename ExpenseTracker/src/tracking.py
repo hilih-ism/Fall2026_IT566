@@ -23,10 +23,10 @@ def create_expense_entry(filepath):
     while True:
         entry_category = input("Choose a category: ").strip()
 
-        if entry_category.isalpha():
+        if entry_category:
             break
         else:
-            print("Invalid category. Enter letters only.")
+            print("Category cannot be empty.")
 
     while True:
         entry_date = input("Enter date (YYYY-MM-DD): ")
@@ -46,6 +46,9 @@ def create_expense_entry(filepath):
     if os.path.exists(filepath):
         with open(filepath, "r") as expense_file:
             expenses = json.load(expense_file)
+
+        if isinstance(expenses, dict):
+            expenses = [expenses]
     else:
         expenses = []
 
