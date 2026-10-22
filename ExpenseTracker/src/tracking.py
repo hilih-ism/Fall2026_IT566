@@ -32,3 +32,4 @@ def create_expense_entry(filepath):
 
  with open(filepath, "w") as expense_file:
         json.dump(expense_entry, expense_file, indent=4)
+        print(f"Added expense: {entry_expense} in category: {entry_category} on date: {entry_date}")
