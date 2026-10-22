@@ -1,6 +1,5 @@
 from tracking import choose_expense_file
 from tracking import create_expense_entry
-from ExpenseTracker.src.filter import filter_expenses_by_date
 from filter import filter_expenses
 
 def main():
@@ -18,7 +17,7 @@ def main():
   if choice == "1":
     create_expense_entry(expense_file)
   elif choice == "2":
-    filter_expenses(expense_file)
+    filter_expenses()
   elif choice == "3":
     expense_file = choose_expense_file()
   elif choice == "4":

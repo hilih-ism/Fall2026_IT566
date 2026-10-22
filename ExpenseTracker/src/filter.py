@@ -29,3 +29,33 @@ def filter_expenses():
         return
 
     found = False
+
+    for filename in os.listdir(expense_folder):
+        if filename.endswith(".json"):
+            filepath = os.path.join(expense_folder, filename)
+
+            with open(filepath, "r") as expense_file:
+                expenses = json.load(expense_file)
+
+            for expense in expenses:
+                date_matches = (
+                    search_date is None
+                    or expense["date"] == search_date
+                )
+
+                category_matches = (
+                    search_category is None
+                    or expense["category"].lower()
+                    == search_category.lower()
+                )
+
+                if date_matches and category_matches:
+                    print(
+                        f'{expense["date"]} | '
+                        f'{expense["expense"]} | '
+                        f'{expense["category"]}'
+                    )
+                    found = True
+
+    if not found:
+        print("No matching expenses found.")
