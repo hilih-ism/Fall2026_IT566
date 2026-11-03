@@ -8,5 +8,10 @@
         "date": "2026-10-21",
         "expense": 60,
         "category": "investing"
+    },
+    {
+        "date": "2026-11-02",
+        "expense": 70,
+        "category": "travel"
     }
 ]

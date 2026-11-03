@@ -8,7 +8,7 @@ def choose_expense_file():
 
     if not filename.endswith(".json"):
         filename += ".json"
-    filepath = os.path.join("ExpenseFiles", filename)
+    filepath = os.path.join("JSONExpenseFiles", filename)
     return filepath
 
 
