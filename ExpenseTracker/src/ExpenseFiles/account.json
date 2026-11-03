@@ -1,0 +1,12 @@
+[
+    {
+        "date": "2026-10-22",
+        "expense": 450,
+        "category": "school fee"
+    },
+    {
+        "date": "2026-11-01",
+        "expense": 900,
+        "category": "rent"
+    }
+]

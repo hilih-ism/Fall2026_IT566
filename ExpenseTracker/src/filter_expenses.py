@@ -37,7 +37,7 @@ def filter_expenses():
             with open(filepath, "r") as expense_file:
                 expenses = json.load(expense_file)
                 if isinstance(expenses, dict):
-                 expenses = [expenses]
+                    expenses = [expenses]
 
             for expense in expenses:
                 date_matches = (

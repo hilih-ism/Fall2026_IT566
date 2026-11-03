@@ -1,6 +1,6 @@
 from tracking import choose_expense_file
 from tracking import create_expense_entry
-from filter import filter_expenses
+from filter_expenses import filter_expenses
 
 def main():
  expense_file = choose_expense_file()
