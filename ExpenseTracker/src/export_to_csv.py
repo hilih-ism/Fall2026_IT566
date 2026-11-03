@@ -4,9 +4,10 @@ import os
 from tracking import choose_expense_file
 
 
-expense_file = choose_expense_file()
+
 
 def export_to_csv(expense_file):
+    expense_file = choose_expense_file()
     current_dir = os.path.dirname(__file__)
     csv_folder = os.path.join(current_dir, "CsvExpenseFiles")
 
