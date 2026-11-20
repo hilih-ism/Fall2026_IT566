@@ -1,0 +1,16 @@
+meta:
+ developer: HiliH
+ version: 1.0
+db:
+ connection:
+  host: localhost
+  port: 5432
+  username: admin
+  password: secret
+  database: expenses
+ pool:
+  pool_name: expense_pool
+  pool_size: 5
+  pool_reset_session: True
+  connection_timeout: 30
+  autocommit: False
